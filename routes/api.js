@@ -14,3 +14,18 @@ app.post("/api/workouts", ({body, res}) => {
          res.json(err);
      });
  });
+
+ app.put("api/workouts/:id", function (req,res) {
+     let id = req.params.id;
+     db.Workout.findOneAndUpdate(
+         { _id: id },
+         { $push: { exercise: req.body }},
+         function (error, success){
+             if(error){
+                 console.log(error);
+             } else {
+                 res.send(success);
+             }
+         }
+     );
+ });
