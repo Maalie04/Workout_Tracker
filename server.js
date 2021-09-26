@@ -24,27 +24,6 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workoutdb",
     useUnifiedTopology: false
  });
 
-app.get("/exercise", (req, res) => {
-    res.sendFile(path.join(__dirname + "/public/exercise.html"));
-});
-
-app.get("/stats", (req, res) => {
-    res.sendFile(path.join(__dirname + "/public/stats.html"));
-});
-
-app.post("/api/workouts", ({body, res}) => {
-   console.log(body)
-   db.Workout.create(body)
-   .then(({_id}) => db.Workout.findOneAndUpdate({},
-    { $push: { exercise:_id}}, { new: true }))
-    .then(dbWorkouts => {
-        res.json(dbWorkouts);
-    })
-    .catch(err => {
-        res.json(err);
-    });
-});
-
 
 app.listen(PORT, () => {
     console.log(`App running on port ${PORT}!`);
