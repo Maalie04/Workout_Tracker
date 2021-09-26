@@ -29,3 +29,37 @@ app.post("/api/workouts", ({body, res}) => {
          }
      );
  });
+
+app.get("/api/workouts", (req,res) => {
+    db.Workout.aggregate([{
+        $addFields: {
+            totalDuration: { $sum: "$exercises.duration" },
+        },
+    }])
+    .then(dbWorkouts => {
+        res.json(dbWorkouts);
+    })
+    .catch(err => {
+        res.json(err);
+    });
+});
+
+
+ app.get("/api/workouts/range", function(req,res) {
+     db.Workout.aggregate([{
+         $addFields: {
+             totalDuration: { $sum: "$exercises.duration" },
+             dateDifference: {
+                 $subtract: [new Date(), "$day"],
+             },
+         }
+     }])
+     .then(function (dbWorkouts) {
+         console.log(dbWorkouts)
+         res.json(dbWorkouts);
+     });
+ });
+
+ app.listen(PORT, () =>
+    console.log(`App listening at http://localhost:${PORT} 🚀`)
+);
