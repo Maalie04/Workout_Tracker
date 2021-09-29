@@ -2,9 +2,15 @@ const router = require("express").Router();
 const Workout = require("../models/Workout");
 
 
-router.post("/api/workouts", (req, res) => {
+router.post("/api/workouts", ({ body }, res) => {
   
-    Workout.create({})
+    Workout.create(body)
+    .then(({ _id }) =>
+			db.Workout.findOneAndUpdate(
+				{ $push: { exercises: _id } },
+				{ new: true }
+			)
+		)
      .then(dbWorkouts => {
          res.json(dbWorkouts);
      })
