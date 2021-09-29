@@ -44,5 +44,6 @@ This Workout Tracker app can be used to keep track of the amount of weight lifte
 
 ## Deploy
 
-[this link](https://murmuring-lake-01147.herokuapp.com/)
+[Heroku](enigmatic-oasis-24150.herokuapp.com/)
+[Github](https://github.com/Maalie04/Workout_Tracker/)
 
