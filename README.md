@@ -1,13 +1,15 @@
-# Workout_Tracker
+# Workout Tracker
 ## Table of Contents
-
->[Workout Tracker]](#Workout Tracker)
 
 >[Description](#Description)
 
 >[Installation](#Installation)
 
->[Usage](#Walk-Through)
+>[Usage](#Usage)
+
+>[Screenshots](#Screenshots)
+
+>[Deploy](#Deploy)
 
 ## Description
 
@@ -22,21 +24,25 @@
 * node
 * node modules
 * inquirer packages
-* mysql2 packages
-* table packages
 * npm packages
 * JSON packages
-* .gitignore
+* MongoDB
+* Mongoose
+* Express
+* Morgan
+
 
 ## Usage 
 
-This Employee Tracker app can be used to view employees, departments, roles within departments, and view the managers of the employees. 
+This Workout Tracker app can be used to keep track of the amount of weight lifted, or distance traveled for cardio exercises. You can either add a new workout or start a new workout.
+## Screenshots
 
-# Screenshots
+![alt image](./public/2021-09-28(9).png)
+![alt image](./public/2021-09-28(11).png)
+![alt image](./public/2021-09-28(13).png)
+![alt image](./public/2021-09-28(14).png)
 
-![alt image](./assets/2021-08-17(4).png)
-![alt image](./assets/2021-08-17.png)
+## Deploy
 
-Walkthrough
->https://drive.google.com/file/d/1xB4vAPp-TWtYeXnTiUdiKhofghEVgF_6/view?usp=sharing
+[this link](https://murmuring-lake-01147.herokuapp.com/)
 
